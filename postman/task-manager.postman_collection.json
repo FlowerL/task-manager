@@ -1,0 +1,97 @@
+{
+	"variables": [],
+	"info": {
+		"name": "task-manager",
+		"_postman_id": "a5d9c554-efb8-8759-c031-204a50acbaca",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "task-info",
+			"description": "任务列表的相关操作",
+			"item": [
+				{
+					"name": "读取任务列表",
+					"request": {
+						"url": "{{url}}/task/info/search",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"status\":\"done\"\n}"
+						},
+						"description": "status=null 读取全部任务列表\nstatus=todo 读取未完成任务列表\nstatus=done 读取已完成任务列表"
+					},
+					"response": []
+				},
+				{
+					"name": "添加任务",
+					"request": {
+						"url": "{{url}}/task/info/add",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user_info_id\":1,\n\t\"task_name\":\"to add test\",\n\t\"time\":3,\n\t\"time_unit\":\"hours\",\n\t\"status\":\"todo\"\n}"
+						},
+						"description": "{\n\t\"user_info_id\":1,\n\t\"task_name\":\"to add test\",\n\t\"time\":3,\n\t\"time_unit\":\"hours\",\n\t\"status\":\"todo\"\n}"
+					},
+					"response": []
+				},
+				{
+					"name": "更新任务",
+					"request": {
+						"url": "{{url}}/task/info/update",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": \"1\",\n    \"user_info_id\": \"1\",\n    \"task_name\": \"Learn HTML\",\n    \"time\": \"4\",\n    \"time_unit\": \"days\",\n     \"status\": \"todo\"\n}"
+						},
+						"description": "{\n\t\"id\": \"1\", //必须\n    \"user_info_id\": \"1\",\n    \"task_name\": \"Learn HTML\",\n    \"time\": \"4\",\n    \"time_unit\": \"days\",\n     \"status\": \"todo\"\n}"
+					},
+					"response": []
+				},
+				{
+					"name": "删除任务",
+					"request": {
+						"url": "{{url}}/task/info/delete",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":8\n}"
+						},
+						"description": "{\n\t\"id\":8//必须\n}"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
