@@ -19,5 +19,6 @@ public class LifeCycleBeanTest {
     @Test
     public void doTest() {
         BeanLifeCycleTestBean bean = (BeanLifeCycleTestBean)ac.getBean("beanLifeCycleTestBean");
+        System.out.println(bean);
     }
 }

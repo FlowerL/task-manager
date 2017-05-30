@@ -86,4 +86,10 @@ InitializingBean, DisposableBean {
         this.param3 = param3;
     }
 
+    @Override
+    public String toString() {
+        return "BeanLifeCycleTestBean [param1=" + param1 + ", param2=" + param2 + ", param3=" + param3 + "]";
+    }
+
+    
 }
